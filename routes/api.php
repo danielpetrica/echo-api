@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::any('/{any}', function(Request $request) {
+Route::any('{any}', function(Request $request) {
+    return $request->all();
+})->where('any', '.*');
+
+Route::any('/', function(Request $request) {
     return $request->all();
 })->where('any', '.*');
 
