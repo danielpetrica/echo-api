@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::any('/{any}', function(Request $request) {
-    return $request->getContent();
+    return $request->all();
 })->where('any', '.*');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
